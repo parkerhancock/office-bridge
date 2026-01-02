@@ -1,30 +1,41 @@
 # Office Bridge
 
-A Claude Code plugin that connects to Microsoft Office apps (Word, Excel, PowerPoint, Outlook) via Office Add-ins, enabling live document manipulation.
+A Claude Code plugin for live Microsoft Office automation via Office Add-ins.
+
+## The Problem
+
+Programmatic Office automation typically requires COM/AppleScript (platform-specific), VBA macros (security concerns), or offline file manipulation (no live editing). None give you real-time bidirectional communication with open documents.
+
+**Office Bridge** connects Claude Code directly to running Office apps through the Office.js API, enabling live document reading and editing.
 
 ## Features
 
-- **Word**: Read/edit documents, tracked changes, accessibility tree navigation
-- **Excel**: Read/write cells and ranges
-- **PowerPoint**: Create slides, fill placeholders, capture slide images
-- **Outlook**: Read emails, compose replies (limited for Gmail accounts)
+| App | Capabilities |
+|-----|--------------|
+| **Word** | Read document structure, edit by paragraph reference, tracked changes |
+| **Excel** | Read/write cells and ranges, get sheet structure |
+| **PowerPoint** | Create slides, fill placeholders, capture slide images |
+| **Outlook** | Read emails, compose replies (limited for Gmail accounts) |
 
 ## Installation
 
-### As a Claude Code Plugin
+### As Claude Code Plugin
 
 ```bash
-# Clone the repo
-git clone https://github.com/yourusername/office-bridge.git
+claude plugins add SanctionedCodeList/office-bridge
+```
 
-# Install as plugin
-claude plugins install /path/to/office-bridge
+Or via the SCL marketplace (includes other tools):
+
+```bash
+claude plugins add SanctionedCodeList/SCL_marketplace
 ```
 
 ### Manual Setup
 
-1. Install dependencies:
+1. Clone and install dependencies:
 ```bash
+git clone https://github.com/SanctionedCodeList/office-bridge.git
 cd office-bridge
 ./install.sh
 ```
@@ -65,11 +76,25 @@ await docs[0].replaceByRef({ p: 3 }, "New text");
 const slide = await ppts[0].getSlideImage(1);
 ```
 
+## How It Works
+
+```
+┌─────────────┐     WebSocket     ┌─────────────┐     Office.js    ┌─────────────┐
+│ Claude Code │ ◄──────────────► │   Bridge    │ ◄──────────────► │   Office    │
+│   (Client)  │                  │   Server    │                  │    Apps     │
+└─────────────┘                  └─────────────┘                  └─────────────┘
+```
+
+1. Bridge server runs locally, listens for WebSocket connections
+2. Office Add-ins connect to bridge via WebSocket
+3. Claude Code connects to bridge, discovers available documents
+4. Commands flow: Claude → Bridge → Add-in → Office.js → Document
+
 ## Documentation
 
-- `references/setup.md` - Detailed setup and sideloading instructions
-- `references/word.md` - Word API reference
-- `references/powerpoint-api.md` - PowerPoint API reference
+- `references/setup.md` — Detailed setup and sideloading instructions
+- `references/word.md` — Word API reference
+- `references/powerpoint-api.md` — PowerPoint API reference
 
 ## Requirements
 
