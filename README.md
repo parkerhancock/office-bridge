@@ -101,7 +101,3 @@ const slide = await ppts[0].getSlideImage(1);
 - Node.js 18+
 - Microsoft Office (Word, Excel, PowerPoint, or Outlook)
 - macOS or Windows
-
-## License
-
-MIT
