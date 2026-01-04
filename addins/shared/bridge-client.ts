@@ -71,12 +71,16 @@ export class BridgeClient {
 
   /**
    * Connect to the bridge server.
+   * Uses the same host that served the add-in (enables remote connections).
    */
   connect(): void {
     this.updateState('connecting');
 
     try {
-      this.ws = new WebSocket('wss://localhost:3847');
+      // Derive bridge host from where the add-in was loaded
+      // This enables remote connections when add-in is served from another machine
+      const bridgeHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
+      this.ws = new WebSocket(`wss://${bridgeHost}:3847`);
 
       this.ws.onopen = () => {
         this.connectionState = 'connected';

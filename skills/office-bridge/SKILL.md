@@ -59,6 +59,7 @@ Start a dev server: `cd office-bridge/addins/<app> && npm run dev-server &`
 ## References
 
 - [references/setup.md](references/setup.md) - Sideloading and installation steps
+- [references/remote-setup.md](references/remote-setup.md) - Connect Office on another machine
 - [references/word.md](references/word.md) - Word patterns and accessibility helpers
 - [references/excel.md](references/excel.md) - Excel workbook and range operations
 - [references/powerpoint.md](references/powerpoint.md) - PowerPoint slide and shape operations

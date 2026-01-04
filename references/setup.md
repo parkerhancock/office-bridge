@@ -1,5 +1,7 @@
 # Office Bridge Setup
 
+For connecting Office on a remote machine (e.g., work laptop to personal laptop), see [remote-setup.md](remote-setup.md).
+
 ## Automated Setup
 
 Run the install script (first time only):

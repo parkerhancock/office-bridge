@@ -89,6 +89,7 @@ module.exports = async (env, options) => {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
+      host: "0.0.0.0", // Accept connections from network (for remote setups)
       server: {
         type: "https",
         options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
