@@ -70,13 +70,13 @@ If you encounter connection problems, Office.js errors, or want to request new f
 
 ```bash
 # Report a bug
-gh issue create --repo SanctionedCodeList/office-bridge --title "Bug: [description]" --body "## Problem\n[Describe the issue]\n\n## Office app affected\n[Word/Excel/PowerPoint/Outlook]\n\n## Error message\n[Include any error output]\n\n## Steps to reproduce\n[How to trigger it]"
+gh issue create --repo parkerhancock/office-bridge --title "Bug: [description]" --body "## Problem\n[Describe the issue]\n\n## Office app affected\n[Word/Excel/PowerPoint/Outlook]\n\n## Error message\n[Include any error output]\n\n## Steps to reproduce\n[How to trigger it]"
 
 # Request a feature
-gh issue create --repo SanctionedCodeList/office-bridge --title "Feature: [description]" --body "## Use case\n[Why this is needed]\n\n## Proposed solution\n[How it might work]"
+gh issue create --repo parkerhancock/office-bridge --title "Feature: [description]" --body "## Use case\n[Why this is needed]\n\n## Proposed solution\n[How it might work]"
 
 # Check existing issues first
-gh issue list --repo SanctionedCodeList/office-bridge
+gh issue list --repo parkerhancock/office-bridge
 ```
 
 This helps improve the bridge for all users.

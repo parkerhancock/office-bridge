@@ -21,6 +21,17 @@ await context.sync();
 return slides.items.length;
 ```
 
+## Detailed Guides
+
+| Task | Guide |
+|------|-------|
+| Slide layouts, masters, placeholders | [powerpoint/layouts.md](powerpoint/layouts.md) |
+| Shapes: create, style, position | [powerpoint/shapes.md](powerpoint/shapes.md) |
+| Images, video, audio | [powerpoint/media.md](powerpoint/media.md) |
+| Speaker notes | [powerpoint/notes.md](powerpoint/notes.md) |
+| Export slides as images | [powerpoint/export.md](powerpoint/export.md) |
+| First-time setup | [setup.md](setup.md) |
+
 ## Common Patterns
 
 ### Get Slide Count

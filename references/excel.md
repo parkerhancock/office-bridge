@@ -21,6 +21,17 @@ await context.sync();
 return sheet.name;
 ```
 
+## Detailed Guides
+
+| Task | Guide |
+|------|-------|
+| Formulas, functions, named ranges | [excel/formulas.md](excel/formulas.md) |
+| Charts: create, style, export | [excel/charts.md](excel/charts.md) |
+| Cell formatting, conditional formats | [excel/formatting.md](excel/formatting.md) |
+| Tables: filter, sort, totals | [excel/tables.md](excel/tables.md) |
+| Data validation, copy/paste, find | [excel/data.md](excel/data.md) |
+| First-time setup | [setup.md](setup.md) |
+
 ## Common Patterns
 
 ### Read Active Sheet Name

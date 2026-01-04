@@ -20,6 +20,15 @@ Code has access to `Office`, `mailbox`, and `item`:
 return item.subject;
 ```
 
+## Detailed Guides
+
+| Task | Guide |
+|------|-------|
+| Appointments, meetings, recurrence | [outlook/calendar.md](outlook/calendar.md) |
+| Folder navigation, mail organization | [outlook/folders.md](outlook/folders.md) |
+| Recipients, address book, contacts | [outlook/contacts.md](outlook/contacts.md) |
+| First-time setup | [setup.md](setup.md) |
+
 ## Read vs Compose Mode
 
 Outlook behaves differently depending on mode:
